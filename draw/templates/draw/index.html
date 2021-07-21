@@ -34,16 +34,30 @@
     var socket = new WebSocket(
         'ws://' + window.location.host + '/ws/draw');
 
+    var store = 0;
+
+
     tool.onMouseMove = function(event) { //http://paperjs.org/reference/tool/ path examples
        path.add(event.point);
+       console.log(event.point);
+       var p = event.point;
        // You may need to add code here if you want to pass any other information.
-       socket.send("{\"x\" : " + event.point.x + ", \"y\" : " + event.point.y + ", \"uid\" : " + uid + "}" );
+       // socket.send("{\"x\" : " + event.point.x + ", \"y\" : " + event.point.y + ", \"uid\" : " + uid + "}" );
+       socket.send("{\"x\" : " + p.x + ", \"y\" : " + p.y + ", \"uid\" : " + uid + ", \"angle\" : " + p.angle + ", \"length\" : " + p.length + ", \"quandrant\" : " + p.quadrant + "}" );
     }
 
     socket.onmessage = function(receivedMessage) {
-        var received = JSON.parse(receivedMessage.data);
-        console.log("Received: " + JSON.stringify(received));
+        // var received = JSON.parse(receivedMessage.data);
+        // console.log("Received: " + JSON.stringify(received));
         // You will probably want to add some code here to draw more lines.
+        
+        var p = JSON.parse(receivedMessage.data);
+        var point = new paper.Point(p['x'], p['y']);
+        point.angle = p['angle'];
+        point.length = p['length'];
+        point.quadrant = p['quadrant'];
+        console.log(point);
+        path.add(point);
     }
 
     socket.onclose = function(e) {

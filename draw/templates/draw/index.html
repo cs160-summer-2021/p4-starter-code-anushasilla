@@ -28,6 +28,8 @@
     var uid = Date.now() % 10000;
     // path.strokeColor = "red";
 
+    var size = "{{size}}";
+
     // getting the URL (you may want to use for Exercise 3)
     var url = window.location.href;
 
@@ -80,7 +82,10 @@
         }
 
         // add point to relevant path
-        new_path.add(point);
+        if (size == "large" || p['path_id'] == current_id) {
+            new_path.add(point);
+        }
+        
     }
 
     socket.onclose = function(e) {

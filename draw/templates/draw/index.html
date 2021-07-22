@@ -24,24 +24,37 @@
     var canvas = document.getElementById('myCanvas');
     paper.setup(canvas);
     var tool = new paper.Tool();
-    var path = new paper.Path();
+    // var path = new paper.Path();
     var uid = Date.now() % 10000;
-    path.strokeColor = "red";
+    // path.strokeColor = "red";
 
     // getting the URL (you may want to use for Exercise 3)
     var url = window.location.href;
 
     var socket = new WebSocket(
-        'ws://' + window.location.host + '/ws/draw');
+        'ws://' + window.location.host + '/ws/draw');    
 
-    var store = 0;
+    var red = Math.random();
+    var green = Math.random();
+    var blue = Math.random();
+
+    var colors = [red, green, blue]   // random color (r, g, b)
+
+    var path_set = [];
+    var current_id = 0;
 
 
     tool.onMouseMove = function(event) { //http://paperjs.org/reference/tool/ path examples
        var p = event.point;
        // You may need to add code here if you want to pass any other information.
        // socket.send("{\"x\" : " + event.point.x + ", \"y\" : " + event.point.y + ", \"uid\" : " + uid + "}" );
-       socket.send("{\"x\" : " + p.x + ", \"y\" : " + p.y + ", \"uid\" : " + uid + ", \"angle\" : " + p.angle + ", \"length\" : " + p.length + ", \"quandrant\" : " + p.quadrant + "}" );
+       if (current_id == 0) {
+           current_id = path_set.length + 1;
+       }
+       socket.send("{\"x\" : " + p.x + ", \"y\" : " + p.y + ", \"uid\" : " + uid + 
+        ", \"angle\" : " + p.angle + ", \"length\" : " + p.length + ", \"quandrant\" : " + p.quadrant +
+        ", \"red\" : " + red + ", \"green\" : " + green + ", \"blue\" : " + blue + 
+        ", \"path_id\" : " + current_id + "}" );
     }
 
     socket.onmessage = function(receivedMessage) {
@@ -54,8 +67,20 @@
         point.angle = p['angle'];
         point.length = p['length'];
         point.quadrant = p['quadrant'];
-        console.log(point);
-        path.add(point);
+        
+        if (p['path_id'] > path_set.length) {
+            // create path object
+            var new_path = new paper.Path();
+            new_path.strokeColor = new paper.Color(p['red'], p['green'], p['blue']);
+            
+            // add path to path_set
+            path_set.push({"id": p['path_id'], "path": new_path});
+        } else {
+            var new_path = path_set[p['path_id'] - 1]["path"];
+        }
+
+        // add point to relevant path
+        new_path.add(point);
     }
 
     socket.onclose = function(e) {

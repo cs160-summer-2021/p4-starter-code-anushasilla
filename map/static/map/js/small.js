@@ -4,9 +4,15 @@ window.onload = function() {
     var user_pts = 0;
     var pts_per_action = 5;
 
-    $(".thumbs-up, .thumbs-down, .hearts, .comment").click(function() {
+    $(".up, .down, .heart, .comment").click(function() {
         var name = $(this).attr('id');
         send_info($(this).attr('class'), name, $("#" + name).val());
+
+        if ($(this).attr('class') == "comment") {
+            var comment = "Latest Update by Anonymous (0 minutes ago): " + $("#" + name).val();
+            $("#latest").empty();
+            $("#latest").append(comment);
+        }
     });
 
     var socket = new WebSocket('ws://' + window.location.host + '/ws/draw'); 

@@ -4,47 +4,25 @@
 <html>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>P4 Drawing</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>P4 Drawing</title>
 
-  <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
-  <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'map/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <script type="text/javascript" src="{% static 'map/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'map/vendor/paper/paper-full.min.js' %}"></script>
 
-  <style type="text/css">
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
+    <link rel="stylesheet" type="text/css" href="{% static 'map/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'map/css/icon.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    .main {
-      margin-top: 15%;
-    }
-
-    .options {
-      width: 40em;
-      height: 13em;
-      background: #c1d3fe;
-      margin-left: 17%;
-      border-radius: 15px;
-      margin-bottom: 0
-    }
-
-    .comments {
-      margin-left: 2.5%;
-    }
-
-    .heart, .up, .down {
-      display: inline!important;
-      margin: 10px;
-    }
-  </style>
+    <script type="text/javascript" src="{% static 'map/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'map/vendor/paper/paper-full.min.js' %}"></script>
+    <script src="{% static 'map/js/small.js' %}"></script>
 
 </head>
 
 <body>
-  <!-- You may change the dimensions of this canvas -->
-  <!-- <canvas id="myCanvas" width="750px" height="750px"></canvas> -->
 
   <h3 style="margin-left:5em; margin-top: 5em; font-size: 50px">Closest Study Spots</h3>
 
@@ -64,12 +42,12 @@
         </div>
       </div>
 
-      <div class="comments" style="margin-bottom: 10em">
-        <button type="button" style="margin-left: 35%; margin-top: 3%;background: white; border: none; border-radius: 10px; width: 10em; height: 2em; font-size: 15px"><div class="" style="display: inline">
-          <div class="heart">❤️</div>
-          <div class="up">👍</div>
-          <div class="down">👎</div>
-        </div></button>
+      <div class="comments">
+        <div style="padding-top: 1px; padding-bottom: 1px; margin-left: 35%; margin-top: 3%;background: white; border: none; border-radius: 10px; width: 10em; height: 2em; font-size: 15px; display: inline;">
+          <button id="study" class="heart">❤️</button>
+          <button id="study" class="up">👍</button>
+          <button id="study" class="down">👎</button>
+        </div>
       </div>
     </div>
 
@@ -88,12 +66,12 @@
         </div>
       </div>
 
-      <div class="comments" >
-        <button type="button" style="margin-left: 35%; margin-top: 3%;background: white; border: none; border-radius: 10px; width: 10em; height: 2em; font-size: 15px"><div class="" style="display: inline">
-          <div class="heart">❤️</div>
-          <div class="up">👍</div>
-          <div class="down">👎</div>
-        </div></button>
+      <div class="comments">
+        <div style="padding-top: 1px; padding-bottom: 1px; margin-left: 35%; margin-top: 3%;background: white; border: none; border-radius: 10px; width: 10em; height: 2em; font-size: 15px; display: inline;">
+          <button id="study" class="heart">❤️</button>
+          <button id="study" class="up">👍</button>
+          <button id="study" class="down">👎</button>
+        </div>
       </div>
     </div>
 
@@ -111,22 +89,22 @@
         </div>
       </div>
 
-      <div class="comments" >
-        <button type="button" style="margin-left: 35%; margin-top: 3%;background: white; border: none; border-radius: 10px; width: 10em; height: 2em; font-size: 15px"><div class="" style="display: inline">
-          <div class="heart">❤️</div>
-          <div class="up">👍</div>
-          <div class="down">👎</div>
-        </div></button>
+      <div class="comments">
+        <div style="padding-top: 1px; padding-bottom: 1px; margin-left: 35%; margin-top: 3%;background: white; border: none; border-radius: 10px; width: 10em; height: 2em; font-size: 15px; display: inline;">
+          <button id="study" class="heart">❤️</button>
+          <button id="study" class="up">👍</button>
+          <button id="study" class="down">👎</button>
+        </div>
       </div>
     </div>
 
-    <div class="options" >
+    <div class="options">
       <div class="info">
         <p style="padding-left: 15px; padding-top: 15px; font-size:38px; margin-bottom: 0"> Campanile (0.4 miles away)</p>
         <hr style="background:white">
       </div>
 
-      <div style="padding-left: 10px;padding-top: 10px;background: white; border: none; border-radius: 5px; width: 100%; height: 2em; font-size: 20px">
+      <div style="padding-left: 10px; padding-top: 10px;background: white; border: none; border-radius: 5px; width: 100%; height: 2em; font-size: 20px">
         <div class="" style="display: inline; margin-left: 0.2em; font-size:25px"> Reactions:
           <div class="heart" style="margin: 1em">2899 ❤️</div>
           <div class="up" style="margin: 1em">1092 👍</div>
@@ -134,29 +112,16 @@
         </div>
       </div>
 
-      <div class="comments" >
-        <button type="button" style="margin-left: 35%; margin-top: 3%;background: white; border: none; border-radius: 10px; width: 10em; height: 2em; font-size: 15px"><div class="" style="display: inline">
-          <div class="heart">❤️</div>
-          <div class="up">👍</div>
-          <div class="down">👎</div>
-        </div></button>
+      <div class="comments">
+        <div style="padding-top: 1px; padding-bottom: 1px; margin-left: 35%; margin-top: 3%;background: white; border: none; border-radius: 10px; width: 10em; height: 2em; font-size: 15px; display: inline;">
+          <button id="study" class="heart">❤️</button>
+          <button id="study" class="up">👍</button>
+          <button id="study" class="down">👎</button>
+        </div>
       </div>
     </div>
     <br>
   </div>
 </body>
-<script>
-  tool.onMouseMove = function(event) {
-
-  }
-
-  socket.onmessage = function(receivedMessage) {
-
-  }
-
-  socket.onclose = function(e) {
-    console.error('Chat socket closed unexpectedly');
-  };
-</script>
 
 </html>

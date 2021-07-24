@@ -73,7 +73,7 @@
   <!-- You may change the dimensions of this canvas -->
   <!-- <canvas id="myCanvas" width="750px" height="750px"></canvas> -->
   <div class="box">
-    <img src="img/water.png" alt="" style="width: 100%">
+    <img src="{% static 'map/img/water.png' %}" alt="" style="width: 100%">
     <div class="text">
       <div class="options" style="margin-top: 10em">
         <div class="info">
@@ -87,9 +87,9 @@
           <p style="padding-left: 10px;padding-top: 10px;background: white; border: none; border-radius: 5px; width: 98.5%; height: 2em; font-size: 18px; background:  #edf2fb;margin: 0">WATER: Latest Update by Anonymous (10 minutes ago): Not Working!</p>
           <div class="study-div" style="padding-left: 10px;padding-top: 10px;background: white; border: none; border-radius: 5px; width: 98.5%; height: 2em; font-size: 20px; background:  #edf2fb;margin: 0">
             <div class="study" style="display: inline; margin: 0em; font-size:18px; background:  #edf2fb; "> STUDY SPOTS:
-              <div class="heart" style="margin: 1em">2899 ❤️</div>
-              <div class="up" style="margin: 1em">1092 👍</div>
-              <div class="down" style="margin: 1em">100 👎</div>
+              <div class="heart" style="margin: 1em"><span>2899</span> ❤️</div>
+              <div class="up" style="margin: 1em"><span>1092</span> 👍</div>
+              <div class="down" style="margin: 1em"><span>100</span> 👎</div>
             </div>
           </div>
           <p style="padding-left: 10px;padding-top: 10px;background:  #edf2fb; border: none; border-radius: 5px; width: 98.5%; height: 2em; font-size: 18px; margin: 0">RESTROOMS: Latest Update by Anonymous (2 hours ago): Well-kept!</p>
@@ -109,58 +109,13 @@
 
     </div> -->
 
-  <!--
+  
     <map name="workmap">
       <area shape="rect" coords="200,100,500,200" alt="topright"  onclick="open('GSCCModal');">
-    </map> -->
+    </map> 
 
 
 </body>
-<script>
-  //
-  // function open(x){
-  //     $(x).modal('show');
-  // }
 
-
-  // variables (common among all displays):
-  var water_fountain = {
-    "comment": "",
-    "thumbs_up": 0,
-    "thumbs_down": 0
-  }; // perhaps these should be a separate JS class/object?
-  var study_spot = {
-    "comment": "",
-    "thumbs_up": 0,
-    "thumbs_down": 0
-  };
-  var restroom = {
-    "comment": "",
-    "thumbs_up": 0,
-    "thumbs_down": 0
-  };
-  var ranking = [{
-    "name": "Bob",
-    "rank": 1,
-    "points": 9001
-  }, {
-    "name": "Jim",
-    "rank": 2,
-    "points": 9000
-  }]; // perhaps this should be a separate JS class/object?
-
-
-  tool.onMouseMove = function(event) {
-
-  }
-
-  socket.onmessage = function(receivedMessage) {
-
-  }
-
-  socket.onclose = function(e) {
-    console.error('Chat socket closed unexpectedly');
-  };
-</script>
 
 </html>

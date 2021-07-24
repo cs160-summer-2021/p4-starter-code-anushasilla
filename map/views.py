@@ -9,6 +9,9 @@ def large_ranked(request):
 def large_not_ranked(request):
     return render(request, 'map/large_not_ranked.html')
 
+def large_not_ranked_popup(request):
+    return render(request, 'map/large_not_ranked_popup.html')
+
 def small(request):
     return render(request, 'map/small.html')
 

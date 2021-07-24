@@ -34,6 +34,16 @@ window.onload = function() {
     }
 
     function updateIconHtml(data, displayed_icon) {
+
+        var water_comment = "Latest Update by Anonymous (0 minutes ago): " + data[0];
+        $("#latest").empty();
+        $("#latest").append(comment);
+        $("#water-comment").
+        $("#restroom-comment").
+        $("#study-heart").
+        $("#study-up").
+        $("#study-down").
+        /*
         displayed_icon = "restroom"; // for testing water fountain - update later
         $("#displayed-icon").empty();
         $("#displayed-icon").append("<h2>" + display_names[displayed_icon] + "</h2>");
@@ -41,6 +51,8 @@ window.onload = function() {
         $("#displayed-icon").append("<p>  Thumbs Down: " + data[displayed_icon]["down"] + "  </p>");
         $("#displayed-icon").append("<p>  Hearts: " + data[displayed_icon]["heart"] + "  </p>");
         $("#displayed-icon").append("<h6>  Comments:  </h6><br>");
+        
+        
         for (var i=0; i < data[displayed_icon]["comments"].length; i++) {
             var comment = data[displayed_icon]["comments"][i];
             if (i < data[displayed_icon]["comments"].length - 1) {
@@ -48,6 +60,7 @@ window.onload = function() {
             }
             $("#displayed-icon").append( "<p>  " + comment + "  </p>" );
         }
+        */
     }
 
     function updateRankingHtml(points) {

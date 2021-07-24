@@ -5,6 +5,7 @@ from . import views
 urlpatterns = [
     path('large/1', views.large_ranked, name='large_ranked'), 
     path('large/2', views.large_not_ranked, name='large_not_ranked'),
+    path('large/2/popup', views.large_not_ranked_popup, name='large_not_ranked_popup'),
     path('small/', views.small, name='large'),
     path('small/water/', views.water, name='water'),
     path('small/study/', views.study, name='study'),

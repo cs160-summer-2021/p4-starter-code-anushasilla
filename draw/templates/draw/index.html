@@ -34,7 +34,7 @@
     var url = window.location.href;
 
     var socket = new WebSocket(
-        'ws://' + window.location.host + '/ws/draw');    
+        'ws://' + window.location.host + '/ws/draw');
 
     var red = Math.random();
     var green = Math.random();
@@ -53,9 +53,9 @@
        if (current_id == 0) {
            current_id = path_set.length + 1;
        }
-       socket.send("{\"x\" : " + p.x + ", \"y\" : " + p.y + ", \"uid\" : " + uid + 
+       socket.send("{\"x\" : " + p.x + ", \"y\" : " + p.y + ", \"uid\" : " + uid +
         ", \"angle\" : " + p.angle + ", \"length\" : " + p.length + ", \"quandrant\" : " + p.quadrant +
-        ", \"red\" : " + red + ", \"green\" : " + green + ", \"blue\" : " + blue + 
+        ", \"red\" : " + red + ", \"green\" : " + green + ", \"blue\" : " + blue +
         ", \"path_id\" : " + current_id + "}" );
     }
 
@@ -63,18 +63,18 @@
         // var received = JSON.parse(receivedMessage.data);
         // console.log("Received: " + JSON.stringify(received));
         // You will probably want to add some code here to draw more lines.
-        
+
         var p = JSON.parse(receivedMessage.data);
         var point = new paper.Point(p['x'], p['y']);
         point.angle = p['angle'];
         point.length = p['length'];
         point.quadrant = p['quadrant'];
-        
+
         if (p['path_id'] > path_set.length) {
             // create path object
             var new_path = new paper.Path();
             new_path.strokeColor = new paper.Color(p['red'], p['green'], p['blue']);
-            
+
             // add path to path_set
             path_set.push({"id": p['path_id'], "path": new_path});
         } else {
@@ -84,8 +84,7 @@
         // add point to relevant path
         if (size == "None" || size == "large" || p['path_id'] == current_id) {
             new_path.add(point);
-        }
-        
+        }      
     }
 
     socket.onclose = function(e) {

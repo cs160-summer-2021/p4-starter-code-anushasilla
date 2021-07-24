@@ -1,0 +1,162 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>P4 Drawing</title>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
+
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .main {
+      margin-top: 15%;
+    }
+
+    .options {
+      width: 40em;
+      height: 13em;
+      background: #c1d3fe;
+      margin-left: 17%;
+      border-radius: 15px;
+      margin-bottom: 0
+    }
+
+    .comments {
+      margin-left: 2.5%;
+    }
+
+    .heart, .up, .down {
+      display: inline!important;
+      margin: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- You may change the dimensions of this canvas -->
+  <!-- <canvas id="myCanvas" width="750px" height="750px"></canvas> -->
+
+  <h3 style="margin-left:5em; margin-top: 5em; font-size: 50px">Closest Study Spots</h3>
+
+  <div class="main">
+
+    <div class="options" style="margin-top: 10em">
+      <div class="info">
+        <p style="padding-left: 15px; padding-top: 15px; font-size:38px; margin-bottom: 0">  Moffitt Library (0.2 miles away)</p>
+        <hr style="background:white">
+      </div>
+
+      <div style="padding-left: 10px;padding-top: 10px;background: white; border: none; border-radius: 5px; width: 100%; height: 2em; font-size: 20px">
+        <div class="" style="display: inline; margin-left: 0.2em; font-size:25px"> Reactions:
+          <div class="heart" style="margin: 1em">5387 ❤️</div>
+          <div class="up" style="margin: 1em">2928 👍</div>
+          <div class="down" style="margin: 1em">109 👎</div>
+        </div>
+      </div>
+
+      <div class="comments" style="margin-bottom: 10em">
+        <button type="button" style="margin-left: 35%; margin-top: 3%;background: white; border: none; border-radius: 10px; width: 10em; height: 2em; font-size: 15px"><div class="" style="display: inline">
+          <div class="heart">❤️</div>
+          <div class="up">👍</div>
+          <div class="down">👎</div>
+        </div></button>
+      </div>
+    </div>
+
+
+    <div class="options" >
+      <div class="info">
+        <p style="padding-left: 15px; padding-top: 15px; font-size:38px; margin-bottom: 0"> Memorial Glade (0.3 miles away)</p>
+        <hr style="background:white">
+      </div>
+
+      <div style="padding-left: 10px;padding-top: 10px;background: white; border: none; border-radius: 5px; width: 100%; height: 2em; font-size: 20px">
+        <div class="" style="display: inline; margin-left: 0.2em; font-size:25px"> Reactions:
+          <div class="heart" style="margin: 1em">4376 ❤️</div>
+          <div class="up" style="margin: 1em">3829 👍</div>
+          <div class="down" style="margin: 1em">989 👎</div>
+        </div>
+      </div>
+
+      <div class="comments" >
+        <button type="button" style="margin-left: 35%; margin-top: 3%;background: white; border: none; border-radius: 10px; width: 10em; height: 2em; font-size: 15px"><div class="" style="display: inline">
+          <div class="heart">❤️</div>
+          <div class="up">👍</div>
+          <div class="down">👎</div>
+        </div></button>
+      </div>
+    </div>
+
+    <div class="options">
+      <div class="info">
+        <p style="padding-left: 15px; padding-top: 15px; font-size:38px; margin-bottom: 0"> Doe Library (0.3 miles away)</p>
+        <hr style="background:white">
+      </div>
+
+      <div style="padding-left: 10px;padding-top: 10px;background: white; border: none; border-radius: 5px; width: 100%; height: 2em; font-size: 20px">
+        <div class="" style="display: inline; margin-left: 0.2em; font-size:25px"> Reactions:
+          <div class="heart" style="margin: 1em">3928 ❤️</div>
+          <div class="up" style="margin: 1em">1208 👍</div>
+          <div class="down" style="margin: 1em">220 👎</div>
+        </div>
+      </div>
+
+      <div class="comments" >
+        <button type="button" style="margin-left: 35%; margin-top: 3%;background: white; border: none; border-radius: 10px; width: 10em; height: 2em; font-size: 15px"><div class="" style="display: inline">
+          <div class="heart">❤️</div>
+          <div class="up">👍</div>
+          <div class="down">👎</div>
+        </div></button>
+      </div>
+    </div>
+
+    <div class="options" >
+      <div class="info">
+        <p style="padding-left: 15px; padding-top: 15px; font-size:38px; margin-bottom: 0"> Campanile (0.4 miles away)</p>
+        <hr style="background:white">
+      </div>
+
+      <div style="padding-left: 10px;padding-top: 10px;background: white; border: none; border-radius: 5px; width: 100%; height: 2em; font-size: 20px">
+        <div class="" style="display: inline; margin-left: 0.2em; font-size:25px"> Reactions:
+          <div class="heart" style="margin: 1em">2899 ❤️</div>
+          <div class="up" style="margin: 1em">1092 👍</div>
+          <div class="down" style="margin: 1em">100 👎</div>
+        </div>
+      </div>
+
+      <div class="comments" >
+        <button type="button" style="margin-left: 35%; margin-top: 3%;background: white; border: none; border-radius: 10px; width: 10em; height: 2em; font-size: 15px"><div class="" style="display: inline">
+          <div class="heart">❤️</div>
+          <div class="up">👍</div>
+          <div class="down">👎</div>
+        </div></button>
+      </div>
+    </div>
+    <br>
+  </div>
+</body>
+<script>
+  tool.onMouseMove = function(event) {
+
+  }
+
+  socket.onmessage = function(receivedMessage) {
+
+  }
+
+  socket.onclose = function(e) {
+    console.error('Chat socket closed unexpectedly');
+  };
+</script>
+
+</html>

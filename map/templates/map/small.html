@@ -2,9 +2,14 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>P4 Drawing</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>P4 Drawing</title>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
 
     <link rel="stylesheet" type="text/css" href="{% static 'map/vendor/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="../../static/map/css/small.css">
@@ -14,12 +19,13 @@
     <script type="text/javascript" src="{% static 'map/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'map/vendor/paper/paper-full.min.js' %}"></script>
     <script src="{% static 'map/js/small.js' %}"></script>
+  
 
 </head>
-<body>
-    <!-- You may change the dimensions of this canvas -->
-    <!-- <canvas id="myCanvas" width="750px" height="750px"></canvas> -->
 
+<body>
+
+    <!--
     <input id="water" placeholder="Water Comment">
     <button id="water" class="comment">Submit Comment</button>
     <button id="water" class="thumbs-up">Submit Thumbs Up</button>
@@ -36,14 +42,28 @@
     <button id="restroom" class="comment">Submit Comment</button>
     <button id="restroom" class="thumbs-up">Submit Thumbs Up</button>
     <button id="restroom" class="thumbs-down">Submit Thumbs Down</button>
-    <button id="restroom" class="hearts">Submit Hearts</button>
-    
+    <button id="restroom" class="hearts">Submit Hearts</button> -->
 
+
+    <div class="main">
+        <a href="water.html">
+        <div class="options">
+        <p style="font-size: 50px; font-weight: bold; padding: 10px; margin-left: 70px">Water</p>
+        </div>
+        </a>
+        <br>
+        <a href="study.html">
+        <div class="options">
+        <p style="font-size: 40px; font-weight: bold; padding: 10px; margin-left: 40px">Study Spots</p>
+        </div>
+    </a>
+        <br>
+            <a href="restroom.html">
+        <div class="options">
+            <p style="font-size: 50px; font-weight: bold; padding: 10px; margin-left: 25px">Restrooms</p>
+        </div>
+        </a>
+    </div>
 </body>
-<script>
 
-    
-    
-
-</script>
 </html>

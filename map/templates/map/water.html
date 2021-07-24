@@ -1,0 +1,117 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>P4 Drawing</title>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
+
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .main {
+      margin-top: 15%;
+    }
+
+    .options {
+      width: 40em;
+      height: 15em;
+      background: #c1d3fe;
+      margin-left: 17%;
+      border-radius: 15px;
+      margin-bottom: 0
+    }
+
+    .comments {
+      margin-left: 2.5%;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- You may change the dimensions of this canvas -->
+  <!-- <canvas id="myCanvas" width="750px" height="750px"></canvas> -->
+
+  <h3 style="margin-left:3.5em; margin-top: 5em; font-size: 50px">Closest Water Refill Stations</h3>
+
+  <div class="main">
+
+    <div class="options" style="margin-top: 10em">
+      <div class="info">
+        <p style="padding-left: 15px; padding-top: 15px; font-size:40px; margin-bottom: 0"> Chou Hall (10 feet away)</p>
+        <hr style="background:white">
+      </div>
+
+      <p style="padding-left: 10px;padding-top: 10px;background: white; border: none; border-radius: 5px; width: 100%; height: 2em; font-size: 20px">Latest Update by Anonymous (10 minutes ago): Not Working!</p>
+
+      <div class="comments">
+        <button type="button" style="margin-left: 35%; margin-top: 3%;background: white; border: none; border-radius: 10px; width: 10em; height: 2em; font-size: 15px">Comment</button>
+      </div>
+    </div>
+
+
+    <div class="options" >
+      <div class="info">
+        <p style="padding-left: 15px; padding-top: 15px; font-size:40px; margin-bottom: 0"> Latimer Hall (0.5 miles away)</p>
+        <hr style="background:white">
+      </div>
+
+      <p style="padding-left: 10px;padding-top: 10px;background: white; border: none; border-radius: 5px; width: 100%; height: 2em; font-size: 20px">Latest Update by Rebecca (1 hour ago): Red Filter</p>
+
+      <div class="comments">
+        <button type="button" style="margin-left: 35%; margin-top: 3%;background: white; border: none; border-radius: 10px; width: 10em; height: 2em; font-size: 15px">Comment</button>
+      </div>
+    </div>
+
+    <div class="options" >
+      <div class="info">
+        <p style="padding-left: 15px; padding-top: 15px; font-size:40px; margin-bottom: 0"> Pimentel (0.6 miles away)</p>
+        <hr style="background:white">
+      </div>
+
+      <p style="padding-left: 10px;padding-top: 10px;background: white; border: none; border-radius: 5px; width: 100%; height: 2em; font-size: 20px">Latest Update by Alex (2 minutes ago): Not Clean!</p>
+
+      <div class="comments">
+        <button type="button" style="margin-left: 35%; margin-top: 3%;background: white; border: none; border-radius: 10px; width: 10em; height: 2em; font-size: 15px">Comment</button>
+      </div>
+    </div>
+
+    <div class="options" >
+      <div class="info">
+        <p style="padding-left: 15px; padding-top: 15px; font-size:40px; margin-bottom: 0"> Stanley Hall (0.7 miles away)</p>
+        <hr style="background:white">
+      </div>
+
+      <p style="padding-left: 10px;padding-top: 10px;background: white; border: none; border-radius: 5px; width: 100%; height: 2em; font-size: 20px">Latest Update by Anonymous (2 hours ago): Clean and works!</p>
+
+      <div class="comments">
+        <button type="button" style="margin-left: 35%; margin-top: 3%;background: white; border: none; border-radius: 10px; width: 10em; height: 2em; font-size: 15px">Comment</button>
+      </div>
+    </div>
+    <br>
+  </div>
+</body>
+<script>
+  tool.onMouseMove = function(event) {
+
+  }
+
+  socket.onmessage = function(receivedMessage) {
+
+  }
+
+  socket.onclose = function(e) {
+    console.error('Chat socket closed unexpectedly');
+  };
+</script>
+
+</html>

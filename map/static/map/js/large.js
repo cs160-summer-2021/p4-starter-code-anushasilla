@@ -3,7 +3,7 @@ window.onload = function() {
     var points = {"Bob Johnson": 15, "Emily Williams": 5, "Jessica Johnson": 25};
     var ranking = updateRankingHtml(points);
     
-    var empty = {"comments": [], "thumbs-up": 0, "thumbs-down": 0, "hearts": 0};
+    var empty = {"comments": [], "up": 0, "down": 0, "heart": 0};
     var data = {"water": JSON.parse(JSON.stringify(empty)), "study": JSON.parse(JSON.stringify(empty)), 
         "restroom": JSON.parse(JSON.stringify(empty))};
 
@@ -34,12 +34,12 @@ window.onload = function() {
     }
 
     function updateIconHtml(data, displayed_icon) {
-        displayed_icon = "water"; // for testing water fountain - update later
+        displayed_icon = "restroom"; // for testing water fountain - update later
         $("#displayed-icon").empty();
         $("#displayed-icon").append("<h2>" + display_names[displayed_icon] + "</h2>");
-        $("#displayed-icon").append("<p>  Thumbs Up: " + data[displayed_icon]["thumbs-up"] + "  </p>");
-        $("#displayed-icon").append("<p>  Thumbs Down: " + data[displayed_icon]["thumbs-down"] + "  </p>");
-        $("#displayed-icon").append("<p>  Hearts: " + data[displayed_icon]["hearts"] + "  </p>");
+        $("#displayed-icon").append("<p>  Thumbs Up: " + data[displayed_icon]["up"] + "  </p>");
+        $("#displayed-icon").append("<p>  Thumbs Down: " + data[displayed_icon]["down"] + "  </p>");
+        $("#displayed-icon").append("<p>  Hearts: " + data[displayed_icon]["heart"] + "  </p>");
         $("#displayed-icon").append("<h6>  Comments:  </h6><br>");
         for (var i=0; i < data[displayed_icon]["comments"].length; i++) {
             var comment = data[displayed_icon]["comments"][i];

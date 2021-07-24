@@ -8,36 +8,11 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'map/vendor/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="../../static/map/css/large.css">
+    <script type="text/javascript" src="{% static 'map/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'map/vendor/paper/paper-full.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'map/js/large.js' %}"></script>
 
-    <style type="text/css">
-    .box{
-          position: relative;
-          display: inline-block; /* Make the width of box same as image */
-      }
-      .box .text{
-          position: absolute;
-          z-index: 999;
-          margin: 0 auto;
-          left: 0;
-          right: 90%;
-          top: 5%; /* Adjust this value to move the positioned div up and down */
-          text-align: center;
-          width: 60%; /* Set the width of the positioned div */
-
-      }
-      .options {
-        width: 40em;
-        height: 15em;
-        background: #c1d3fe;
-        margin-left: 17%;
-        border-radius: 15px;
-        margin-bottom: 0
-      }
-
-      .comments {
-        margin-left: 2.5%;
-      }
-    </style>
+  
 
 </head>
 <body>
@@ -45,8 +20,7 @@
     <!-- <canvas id="myCanvas" width="750px" height="750px"></canvas> -->
 
 
-    <img src="img/water.png" alt="" usemap="#workmap" width="1500" height="1000">
-
+    <img src="{% static 'map/img/water.png' %}" alt="" usemap="#workmap" width="1500" height="1000">
 
     <map name="workmap">
       <area shape="rect" coords="200,100,500,200" alt="topright"  href="large_not_ranked_popup.html" onclick="open('GSCCModal');">
@@ -54,31 +28,5 @@
 
 
 </body>
-<script>
-//
-// function open(x){
-//     $(x).modal('show');
-// }
 
-
-    // variables (common among all displays):
-    var water_fountain = {"comment": "", "thumbs_up": 0, "thumbs_down": 0}; // perhaps these should be a separate JS class/object?
-    var study_spot = {"comment": "", "thumbs_up": 0, "thumbs_down": 0};
-    var restroom = {"comment": "", "thumbs_up": 0, "thumbs_down": 0};
-    var ranking = [{"name": "Bob", "rank": 1, "points": 9001}, {"name": "Jim", "rank": 2, "points": 9000}]; // perhaps this should be a separate JS class/object?
-
-
-    tool.onMouseMove = function(event) {
-
-    }
-
-    socket.onmessage = function(receivedMessage) {
-
-    }
-
-    socket.onclose = function(e) {
-        console.error('Chat socket closed unexpectedly');
-    };
-
-</script>
 </html>

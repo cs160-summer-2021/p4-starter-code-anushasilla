@@ -2,32 +2,177 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>P4 Drawing</title>
+  <meta name="viewport" http-equiv="Content-Type" content="text/html; charset=utf-8;width=device-width; initial-scale=1">
+  <title>P4 Drawing</title>
 
-    <link rel="stylesheet" type="text/css" href="{% static 'map/vendor/bootstrap/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="../../static/map/css/large.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" type="text/css" href="{% static 'map/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="../../static/map/css/large.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="{% static 'map/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'map/vendor/paper/paper-full.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'map/js/large.js' %}"></script>
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .box {
+      position: relative;
+      display: inline-block;
+      /* Make the width of box same as image */
+    }
+
+    .box .text {
+      position: absolute;
+      z-index: 999;
+      margin: 0 auto;
+      left: 60%;
+      right: 0;
+      top: 1%;
+      /* Adjust this value to move the positioned div up and down */
+      text-align: center;
+      width: 60%;
+      /* Set the width of the positioned div */
+    }
+
+    .options {
+      width: 20em;
+      height: 15em;
+      background: #c1d3fe;
+      margin-left: 17%;
+      border-radius: 15px;
+      margin-bottom: 0
+    }
+
+    .comments {
+      margin-left: 2.5%;
+    }
+
+    .study,
+    .study-div {
+      margin-left: 0;
+      padding: 0;
+    }
+
+    .info {
+      margin: 0;
+    }
+
+  </style>
 
 </head>
+
 <body>
-    <div class="map"></div>
-    <div class="icon-info">
-        <div>
-            <h2 class="row">Ranking</h2>
-            <div id="ranking" class="row"></div>
-        </div><br><br>
+  <!-- You may change the dimensions of this canvas -->
+  <!-- <canvas id="myCanvas" width="750px" height="750px"></canvas> -->
+  <div class="box">
+    <img src="img/water.png" alt="" style="width: 100%">
+    <div class="text">
+      <div class="options" style="margin-top: 10em">
+        <div class="info">
+          <p style="padding-left: 15px; padding-top: 15px; font-size:30px; margin-bottom: 0"> Leaderboard</p>
+<hr style="margin-bottom:10px; margin-top:5px; width: 20em">
+        </div>
 
-        <div id="displayed-icon" class="row"></div>
+        <div class="info" style="background: #edf2fb">
+          <div class="container" style="margin:0">
+            <table style="width:25%; font-weight: bold; margin: 0" class="table-striped">
+              <thead>
+                <tr>
+                  <th style="font-size: 15px">Rank</th>
+                  <th style="font-size: 15px">Name</th>
+                  <th style="font-size: 15px">Points</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Jane</td>
+                  <td>1000</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Alex</td>
+                  <td>950</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>John</td>
+                  <td>900</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Anonymous</td>
+                  <td>800</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Mary</td>
+                  <td>750</td>
+                </tr>
 
+
+
+
+              </tbody>
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
     </div>
-    
+
 </body>
+<script>
+  //
+  // function open(x){
+  //     $(x).modal('show');
+  // }
+
+
+  // variables (common among all displays):
+  var water_fountain = {
+    "comment": "",
+    "thumbs_up": 0,
+    "thumbs_down": 0
+  }; // perhaps these should be a separate JS class/object?
+  var study_spot = {
+    "comment": "",
+    "thumbs_up": 0,
+    "thumbs_down": 0
+  };
+  var restroom = {
+    "comment": "",
+    "thumbs_up": 0,
+    "thumbs_down": 0
+  };
+  var ranking = [{
+    "name": "Bob",
+    "rank": 1,
+    "points": 9001
+  }, {
+    "name": "Jim",
+    "rank": 2,
+    "points": 9000
+  }]; // perhaps this should be a separate JS class/object?
+
+
+  tool.onMouseMove = function(event) {
+
+  }
+
+  socket.onmessage = function(receivedMessage) {
+
+  }
+
+  socket.onclose = function(e) {
+    console.error('Chat socket closed unexpectedly');
+  };
+</script>
 
 </html>

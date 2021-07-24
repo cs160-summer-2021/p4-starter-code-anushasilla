@@ -6,40 +6,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>P4 Drawing</title>
 
-    <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
-    <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'map/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="../../static/map/css/large.css">
 
-    <style type="text/css">
-    </style>
+    <script type="text/javascript" src="{% static 'map/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'map/vendor/paper/paper-full.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'map/js/large.js' %}"></script>
 
 </head>
 <body>
-    <!-- You may change the dimensions of this canvas -->
-    <!-- <canvas id="myCanvas" width="750px" height="750px"></canvas> -->
-    This is the large display (unranked)
+    <div class="map"></div>
+    <div class="icon-info">
+
+        <div id="displayed-icon" class="row"></div>
+
+    </div>
 </body>
-<script>
-
-    
-    // variables (common among all displays):
-    var water_fountain = {"comment": "", "thumbs_up": 0, "thumbs_down": 0}; // perhaps these should be a separate JS class/object?
-    var study_spot = {"comment": "", "thumbs_up": 0, "thumbs_down": 0};
-    var restroom = {"comment": "", "thumbs_up": 0, "thumbs_down": 0};
-    var ranking = [{"name": "Bob", "rank": 1, "points": 9001}, {"name": "Jim", "rank": 2, "points": 9000}]; // perhaps this should be a separate JS class/object?
-
-
-    tool.onMouseMove = function(event) {
-       
-    }
-
-    socket.onmessage = function(receivedMessage) {
-        
-    }
-
-    socket.onclose = function(e) {
-        console.error('Chat socket closed unexpectedly');
-    };
-
-</script>
 </html>

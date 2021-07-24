@@ -11,62 +11,59 @@
   <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
 
-  <style type="text/css">
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-  body {
-    font-family: 'Poppins', sans-serif;
-  }
-  .main {
-    margin-top: 15%;
-  }
-  .options {
-    width: 20em;
-    height: 7em;
-    background: #c1d3fe;
-    margin-left: 35%;
-    border-radius: 15px;
-  }
+    <link rel="stylesheet" type="text/css" href="{% static 'map/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="../../static/map/css/small.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-
-  </style>
+    <script type="text/javascript" src="{% static 'map/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'map/vendor/paper/paper-full.min.js' %}"></script>
+    <script src="{% static 'map/js/small.js' %}"></script>
+  
 
 </head>
 
 <body>
-  <!-- You may change the dimensions of this canvas -->
-  <!-- <canvas id="myCanvas" width="750px" height="750px"></canvas> -->
-  <div class="main">
-    <a href="water.html">
-    <div class="options">
-      <p style="font-size: 50px; font-weight: bold; padding: 10px; margin-left: 70px">Water</p>
-    </div>
+
+    <!--
+    <input id="water" placeholder="Water Comment">
+    <button id="water" class="comment">Submit Comment</button>
+    <button id="water" class="thumbs-up">Submit Thumbs Up</button>
+    <button id="water" class="thumbs-down">Submit Thumbs Down</button>
+    <button id="water" class="hearts">Submit Hearts</button><br><br>
+
+    <input id="study" placeholder="Study Comment">
+    <button id="study" class="comment">Submit Comment</button>
+    <button id="study" class="thumbs-up">Submit Thumbs Up</button>
+    <button id="study" class="thumbs-down">Submit Thumbs Down</button>
+    <button id="study" class="hearts">Submit Hearts</button><br><br>
+
+    <input id="restroom" placeholder="Restroom Comment">
+    <button id="restroom" class="comment">Submit Comment</button>
+    <button id="restroom" class="thumbs-up">Submit Thumbs Up</button>
+    <button id="restroom" class="thumbs-down">Submit Thumbs Down</button>
+    <button id="restroom" class="hearts">Submit Hearts</button> -->
+
+
+    <div class="main">
+        <a href="water.html">
+        <div class="options">
+        <p style="font-size: 50px; font-weight: bold; padding: 10px; margin-left: 70px">Water</p>
+        </div>
+        </a>
+        <br>
+        <a href="study.html">
+        <div class="options">
+        <p style="font-size: 40px; font-weight: bold; padding: 10px; margin-left: 40px">Study Spots</p>
+        </div>
     </a>
-    <br>
-    <a href="study.html">
-    <div class="options">
-      <p style="font-size: 40px; font-weight: bold; padding: 10px; margin-left: 40px">Study Spots</p>
+        <br>
+            <a href="restroom.html">
+        <div class="options">
+            <p style="font-size: 50px; font-weight: bold; padding: 10px; margin-left: 25px">Restrooms</p>
+        </div>
+        </a>
     </div>
-  </a>
-      <br>
-        <a href="restroom.html">
-      <div class="options">
-        <p style="font-size: 50px; font-weight: bold; padding: 10px; margin-left: 25px">Restrooms</p>
-      </div>
-    </a>
-  </div>
 </body>
-<script>
-  tool.onMouseMove = function(event) {
-
-  }
-
-  socket.onmessage = function(receivedMessage) {
-
-  }
-
-  socket.onclose = function(e) {
-    console.error('Chat socket closed unexpectedly');
-  };
-</script>
 
 </html>

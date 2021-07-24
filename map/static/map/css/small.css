@@ -1,0 +1,22 @@
+.comment .hearts .thumbs-up .thumbs-down {
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+}
+.main {
+    margin-top: 15%;
+}
+.options {
+    width: 20em;
+    height: 7em;
+    background: #c1d3fe;
+    margin-left: 35%;
+    border-radius: 15px;
+}

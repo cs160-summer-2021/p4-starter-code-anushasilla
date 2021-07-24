@@ -27,40 +27,23 @@ window.onload = function() {
 
         // update HTML with jquery
         ranking = updateRankingHtml(points);
-        updateIconHtml(data, curr_displayed_icon);
+        updateIconHtml(data, curr_displayed_icon, obj);
 
         console.log(data);
         console.log(ranking);
     }
 
-    function updateIconHtml(data, displayed_icon) {
+    function updateIconHtml(data, displayed_icon, obj) {
 
-        var water_comment = "Latest Update by Anonymous (0 minutes ago): " + data[0];
-        $("#latest").empty();
-        $("#latest").append(comment);
-        $("#water-comment").
-        $("#restroom-comment").
-        $("#study-heart").
-        $("#study-up").
-        $("#study-down").
-        /*
-        displayed_icon = "restroom"; // for testing water fountain - update later
-        $("#displayed-icon").empty();
-        $("#displayed-icon").append("<h2>" + display_names[displayed_icon] + "</h2>");
-        $("#displayed-icon").append("<p>  Thumbs Up: " + data[displayed_icon]["up"] + "  </p>");
-        $("#displayed-icon").append("<p>  Thumbs Down: " + data[displayed_icon]["down"] + "  </p>");
-        $("#displayed-icon").append("<p>  Hearts: " + data[displayed_icon]["heart"] + "  </p>");
-        $("#displayed-icon").append("<h6>  Comments:  </h6><br>");
-        
-        
-        for (var i=0; i < data[displayed_icon]["comments"].length; i++) {
-            var comment = data[displayed_icon]["comments"][i];
-            if (i < data[displayed_icon]["comments"].length - 1) {
-                comment += ", "
-            }
-            $("#displayed-icon").append( "<p>  " + comment + "  </p>" );
+        if (obj['type'] == "comment") {
+            var content = obj['name'].toUpperString() + ": Latest Update by Anonymous (0 minutes ago) - " + obj['content'];
+            
+        } else {
+            var content = $('#' + obj['name']).text().parseInt() + 1;
         }
-        */
+        $("#" + obj['name']).empty();
+        $("#" + obj['name']).append(content);
+        
     }
 
     function updateRankingHtml(points) {

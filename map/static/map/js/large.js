@@ -1,49 +1,31 @@
 window.onload = function() {
 
-    var points = {"Bob Johnson": 15, "Emily Williams": 5, "Jessica Johnson": 25};
+    var points = {"Jane": 25, "Alex": 10, "John": 5, "Anonymous": 15, "Mary": 5};
     var ranking = updateRankingHtml(points);
-    
-    var empty = {"comments": [], "up": 0, "down": 0, "heart": 0};
-    var data = {"water": JSON.parse(JSON.stringify(empty)), "study": JSON.parse(JSON.stringify(empty)), 
-        "restroom": JSON.parse(JSON.stringify(empty))};
-
-    var curr_displayed_icon = ""; // icon user clicked on (default empty string)
-    var display_names = {"water": "Water Fountain", "restroom": "Restroom", "study": "Study Spot"};
     
     var socket = new WebSocket(
         'ws://' + window.location.host + '/ws/draw'); 
 
     socket.onmessage = function(receivedMessage) {
-
         var obj = JSON.parse(receivedMessage.data);
-        var new_data = data[obj['name']];
-        if (obj['type'] == "comment") {
-            new_data["comments"].push(obj['content']);
-        } else {
-            new_data[obj['type']] += 1;
-        }
-
         points[obj['user_name']] = obj['points'];
 
         // update HTML with jquery
         ranking = updateRankingHtml(points);
-        updateIconHtml(data, curr_displayed_icon, obj);
-
-        console.log(data);
-        console.log(ranking);
+        updateIconHtml(obj);
     }
 
-    function updateIconHtml(data, displayed_icon, obj) {
+    function updateIconHtml(obj) {
 
         if (obj['type'] == "comment") {
-            var content = obj['name'].toUpperString() + ": Latest Update by Anonymous (0 minutes ago) - " + obj['content'];
-            
+            var content = obj['name'].toUpperCase() + ": Latest Update by Anonymous (0 minutes ago) - " + obj['content'];
+            $("#" + obj['name']).empty();
+            $("#" + obj['name']).append(content);
         } else {
-            var content = $('#' + obj['name']).text().parseInt() + 1;
+            var content = parseInt($('#' + obj['type']).text()) + 1;
+            $("#" + obj['type']).empty();
+            $("#" + obj['type']).append(content);
         }
-        $("#" + obj['name']).empty();
-        $("#" + obj['name']).append(content);
-        
     }
 
     function updateRankingHtml(points) {
@@ -65,9 +47,10 @@ window.onload = function() {
 
         $("#ranking").empty();
         for (var i=0; i < new_ranking.length; i++) {
-            $("#ranking").append("<span>  " + new_ranking[i]["rank"] + "  </span>");
-            $("#ranking").append("<span>  " + new_ranking[i]["name"] + "  </span>");
-            $("#ranking").append("<span>  " + new_ranking[i]["points"] + "  </span><br><br>");
+            var r = new_ranking[i]["rank"];
+            var n = new_ranking[i]["name"];
+            var p = new_ranking[i]["points"];
+            $("#ranking").append("<tr><td>" + r + "</td><td>" + n + "</td><td>" + p + "</td></tr>");
         }
         return new_ranking;
     }

@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{% static 'map/js/large.js' %}"></script>
 
   <style type="text/css">
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
@@ -66,10 +67,16 @@
 </head>
 
 <body>
-  <!-- You may change the dimensions of this canvas -->
-  <!-- <canvas id="myCanvas" width="750px" height="750px"></canvas> -->
+    
   <div class="box">
-    <img src="img/water.png" alt="" style="width: 100%">
+    <img src="{% static 'map/img/water.png' %}" alt="" usemap="#workmap" width="1500" height="1000">
+
+    <map name="workmap">
+      <area shape="rect" coords="200,100,500,200" alt="topright"  href="1/popup" onclick="open('GSCCModal');">
+    </map>
+
+
+
     <div class="text">
       <div class="options" style="margin-top: 10em">
         <div class="info">
@@ -87,7 +94,7 @@
                   <th style="font-size: 15px">Points</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="ranking">
                 <tr>
                   <td>1</td>
                   <td>Jane</td>
@@ -114,9 +121,6 @@
                   <td>750</td>
                 </tr>
 
-
-
-
               </tbody>
             </table>
 
@@ -128,51 +132,5 @@
     </div>
 
 </body>
-<script>
-  //
-  // function open(x){
-  //     $(x).modal('show');
-  // }
-
-
-  // variables (common among all displays):
-  var water_fountain = {
-    "comment": "",
-    "thumbs_up": 0,
-    "thumbs_down": 0
-  }; // perhaps these should be a separate JS class/object?
-  var study_spot = {
-    "comment": "",
-    "thumbs_up": 0,
-    "thumbs_down": 0
-  };
-  var restroom = {
-    "comment": "",
-    "thumbs_up": 0,
-    "thumbs_down": 0
-  };
-  var ranking = [{
-    "name": "Bob",
-    "rank": 1,
-    "points": 9001
-  }, {
-    "name": "Jim",
-    "rank": 2,
-    "points": 9000
-  }]; // perhaps this should be a separate JS class/object?
-
-
-  tool.onMouseMove = function(event) {
-
-  }
-
-  socket.onmessage = function(receivedMessage) {
-
-  }
-
-  socket.onclose = function(e) {
-    console.error('Chat socket closed unexpectedly');
-  };
-</script>
 
 </html>

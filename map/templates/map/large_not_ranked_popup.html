@@ -1,0 +1,166 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" http-equiv="Content-Type" content="text/html; charset=utf-8;width=device-width; initial-scale=1">
+  <title>P4 Drawing</title>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
+
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .box {
+      position: relative;
+      display: inline-block;
+      /* Make the width of box same as image */
+    }
+
+    .box .text {
+      position: absolute;
+      z-index: 999;
+      margin: 0 auto;
+      left: 0;
+      right: 90%;
+      top: 5%;
+      /* Adjust this value to move the positioned div up and down */
+      text-align: center;
+      width: 60%;
+      /* Set the width of the positioned div */
+    }
+
+    .options {
+      width: 40em;
+      height: 15em;
+      background: #c1d3fe;
+      margin-left: 17%;
+      border-radius: 15px;
+      margin-bottom: 0
+    }
+
+    .comments {
+      margin-left: 2.5%;
+    }
+
+    .heart,
+    .up,
+    .down {
+      display: inline!important;
+      margin: 10px;
+    }
+
+    .study,
+    .study-div {
+      margin-left: 0;
+      padding: 0;
+    }
+
+    .info {
+      margin: 0;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- You may change the dimensions of this canvas -->
+  <!-- <canvas id="myCanvas" width="750px" height="750px"></canvas> -->
+  <div class="box">
+    <img src="img/water.png" alt="" style="width: 100%">
+    <div class="text">
+      <div class="options" style="margin-top: 10em">
+        <div class="info">
+          <p style="padding-left: 15px; padding-top: 15px; font-size:30px; margin-bottom: 0"> Stanley Hall (10 feet away)</p>
+          <hr style="background:white">
+        </div>
+
+        <div class="info" style="background: #edf2fb">
+
+
+          <p style="padding-left: 10px;padding-top: 10px;background: white; border: none; border-radius: 5px; width: 98.5%; height: 2em; font-size: 18px; background:  #edf2fb;margin: 0">WATER: Latest Update by Anonymous (10 minutes ago): Not Working!</p>
+          <div class="study-div" style="padding-left: 10px;padding-top: 10px;background: white; border: none; border-radius: 5px; width: 98.5%; height: 2em; font-size: 20px; background:  #edf2fb;margin: 0">
+            <div class="study" style="display: inline; margin: 0em; font-size:18px; background:  #edf2fb; "> STUDY SPOTS:
+              <div class="heart" style="margin: 1em">2899 ❤️</div>
+              <div class="up" style="margin: 1em">1092 👍</div>
+              <div class="down" style="margin: 1em">100 👎</div>
+            </div>
+          </div>
+          <p style="padding-left: 10px;padding-top: 10px;background:  #edf2fb; border: none; border-radius: 5px; width: 98.5%; height: 2em; font-size: 18px; margin: 0">RESTROOMS: Latest Update by Anonymous (2 hours ago): Well-kept!</p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- <div class="main">
+          <img src="img/water.png" alt="" usemap="#workmap" width="1500" height="1000">
+          <div class="floating">
+            TEST
+          </div>
+
+    </div> -->
+
+  <!--
+    <map name="workmap">
+      <area shape="rect" coords="200,100,500,200" alt="topright"  onclick="open('GSCCModal');">
+    </map> -->
+
+
+</body>
+<script>
+  //
+  // function open(x){
+  //     $(x).modal('show');
+  // }
+
+
+  // variables (common among all displays):
+  var water_fountain = {
+    "comment": "",
+    "thumbs_up": 0,
+    "thumbs_down": 0
+  }; // perhaps these should be a separate JS class/object?
+  var study_spot = {
+    "comment": "",
+    "thumbs_up": 0,
+    "thumbs_down": 0
+  };
+  var restroom = {
+    "comment": "",
+    "thumbs_up": 0,
+    "thumbs_down": 0
+  };
+  var ranking = [{
+    "name": "Bob",
+    "rank": 1,
+    "points": 9001
+  }, {
+    "name": "Jim",
+    "rank": 2,
+    "points": 9000
+  }]; // perhaps this should be a separate JS class/object?
+
+
+  tool.onMouseMove = function(event) {
+
+  }
+
+  socket.onmessage = function(receivedMessage) {
+
+  }
+
+  socket.onclose = function(e) {
+    console.error('Chat socket closed unexpectedly');
+  };
+</script>
+
+</html>

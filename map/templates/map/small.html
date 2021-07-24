@@ -2,39 +2,65 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>P4 Drawing</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>P4 Drawing</title>
 
-    <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
-    <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
 
-    <style type="text/css">
-    </style>
+  <style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+  .main {
+    margin-top: 15%;
+  }
+  .options {
+    width: 20em;
+    height: 7em;
+    background: #c1d3fe;
+    margin-left: 35%;
+    border-radius: 15px;
+  }
+
+
+  </style>
 
 </head>
+
 <body>
-    <!-- You may change the dimensions of this canvas -->
-    <!-- <canvas id="myCanvas" width="750px" height="750px"></canvas> -->
-    This is the small display
+  <!-- You may change the dimensions of this canvas -->
+  <!-- <canvas id="myCanvas" width="750px" height="750px"></canvas> -->
+  <div class="main">
+    <div class="options">
+      <p style="font-size: 50px; font-weight: bold; padding: 10px; margin-left: 70px">Water</p>
+    </div>
+    <br>
+    <div class="options">
+      <p style="font-size: 40px; font-weight: bold; padding: 10px; margin-left: 40px">Study Spots</p>
+    </div>
+      <br>
+      <div class="options">
+        <p style="font-size: 50px; font-weight: bold; padding: 10px; margin-left: 25px">Restrooms</p>
+      </div>
+  </div>
 </body>
 <script>
+  tool.onMouseMove = function(event) {
 
-    
+  }
 
+  socket.onmessage = function(receivedMessage) {
 
-    tool.onMouseMove = function(event) {
-       
-    }
+  }
 
-    socket.onmessage = function(receivedMessage) {
-        
-    }
-
-    socket.onclose = function(e) {
-        console.error('Chat socket closed unexpectedly');
-    };
-
+  socket.onclose = function(e) {
+    console.error('Chat socket closed unexpectedly');
+  };
 </script>
+
 </html>

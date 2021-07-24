@@ -15,8 +15,13 @@ body {
 }
 .options {
     width: 20em;
-    height: 7em;
+    height: 8em;
     background: #c1d3fe;
     margin-left: 35%;
     border-radius: 15px;
+}
+
+a {
+  color: blue;
+  text-decoration: none; /* no underline */
 }

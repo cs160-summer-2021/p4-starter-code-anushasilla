@@ -23,3 +23,6 @@ def study(request):
 
 def restroom(request):
     return render(request, 'map/restroom.html')
+
+def directions(request):
+    return render(request, 'map/directions.html')

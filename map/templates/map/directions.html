@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>P4 Drawing</title>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'map/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <script type="text/javascript" src="{% static 'map/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'map/vendor/paper/paper-full.min.js' %}"></script>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'map/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'map/css/icon.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <script type="text/javascript" src="{% static 'map/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'map/vendor/paper/paper-full.min.js' %}"></script>
+  <script src="{% static 'map/js/small.js' %}"></script>
+
+
+</head>
+
+<body>
+
+
+  <div class="main">
+
+    <div class="options" style="margin-top: 10em">
+      <div class="info">
+        <p style="padding-left: 15px; padding-top: 15px; font-size:30px; margin-bottom: 0"> Directions to Water Refill in Stanley Hall</p>
+        <hr style="background:white">
+      </div>
+
+      <p id="latest" style="padding-left: 10px;padding-top: 10px;background: white; border: none; border-radius: 5px; width: 100%; height: 2em; font-size: 20px">(2 ft) Open double doors.</p>
+      <p id="latest" style="padding-left: 10px;padding-top: 10px;background: white; border: none; border-radius: 5px; width: 100%; height: 2em; font-size: 20px">(5 ft) Walk straight.</p>
+      <p id="latest" style="padding-left: 10px;padding-top: 10px;background: white; border: none; border-radius: 5px; width: 100%; height: 2em; font-size: 20px">(3 ft) Turn left.</p>
+      <p id="latest" style="padding-left: 10px;padding-top: 10px;background: white; border: none; border-radius: 5px; width: 100%; height: 2em; font-size: 20px">You have reached your destination!</p>
+
+      <a href="water.html">
+        <div class="comments">
+          <input id="water" style="margin-left: 15%; margin-top: 3%;background: white; border: none; width: 10em; height: 2em; font-size: 15px">
+          <button id="water" class="comment" type="button" style="margin-left: 15%; margin-top: 3%;margin-bottom: 10%; background: white; border: none; border-radius: 10px; width: 10em; height: 2em; font-size: 15px">Back</button>
+        </div>
+    </div>
+    </a>
+    <br>
+
+
+
+
+  </div>
+</body>
+
+</html>

@@ -19,7 +19,7 @@ window.onload = function() {
         }
     });
 
-    var socket = new WebSocket('ws://' + window.location.host + '/ws/draw'); 
+    var socket = new WebSocket('wss://' + window.location.host + '/wss/draw'); 
     function send_info(type, name, content) {
         user_pts += pts_per_action;
         socket.send("{\"type\" : \"" + type + "\", \"name\" : \"" + name + 

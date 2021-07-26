@@ -4,7 +4,7 @@ window.onload = function() {
     var ranking = updateRankingHtml(points);
     
     var socket = new WebSocket(
-        'ws://' + window.location.host + '/ws/draw'); 
+        'wss://' + window.location.host + '/wss/draw'); 
 
     socket.onmessage = function(receivedMessage) {
         var obj = JSON.parse(receivedMessage.data);
